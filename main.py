@@ -311,4 +311,4 @@ await ctx.send(embed=embed)
 # AVVIO BOT
 # ==========================================
 # Inserisci qui il TOKEN del tuo bot Discord
-bot.run(os.getenv("MTU0NTUxNzAyNTA4OTAzNjM1OA.GcXMjj.Zm_i0DoxMRqPhR-9UfbqP7-AeHCdIzWq3atCW0")
+bot.run("MTU0NTUxNzAyNTA4OTAzNjM1OA.GSKeuC.r-PF9X-_8Qg1AfCQ-HJ6moQ0mLobrupUU_C3sA")
