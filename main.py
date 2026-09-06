@@ -40,8 +40,8 @@ timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
 )
 """)
 
-    conn.commit()
-    conn.close()
+conn.commit()
+conn.close()
 
 init_db()
 
