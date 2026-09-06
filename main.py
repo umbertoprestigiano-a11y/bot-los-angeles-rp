@@ -8,20 +8,20 @@ from discord.ui import Button, View, Modal, TextInput
 # SETUP DATABASE SQLITE
 # ==========================================
 def init_db():
-conn = sqlite3.connect("polizia.db")
-cursor = conn.cursor()
+  conn = sqlite3.connect("polizia.db")
+  cursor = conn.cursor()
 
-# Tabella cittadini
-cursor.execute("""
-CREATE TABLE IF NOT EXISTS cittadini (
-user_id INTEGER PRIMARY KEY,
-cittadinanza BOOLEAN DEFAULT 1,
-ville INTEGER DEFAULT 0,
-patente BOOLEAN DEFAULT 0,
-porto_darmi BOOLEAN DEFAULT 0,
-stato_fermo BOOLEAN DEFAULT 0,
-conto_bancario INTEGER DEFAULT 0,
-precedenti TEXT DEFAULT ''
+  # Tabella cittadini
+  cursor.execute("""
+  CREATE TABLE IF NOT EXISTS cittadini (
+    user_id INTEGER PRIMARY KEY,
+    cittadinanza BOOLEAN DEFAULT 1,
+    ville INTEGER DEFAULT 0,
+    patente BOOLEAN DEFAULT 0,
+    porto_darmi BOOLEAN DEFAULT 0,
+    stato_fermo BOOLEAN DEFAULT 0,
+    conto_bancario INTEGER DEFAULT 0,
+    precedenti TEXT DEFAULT ''
 )
 """)
 
