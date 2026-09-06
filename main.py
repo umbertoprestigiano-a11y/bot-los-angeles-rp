@@ -40,31 +40,31 @@ timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
 )
 """)
 
-conn.commit()
-conn.close()
+    conn.commit()
+    conn.close()
 
 init_db()
 
 # Helper per accedere al DB
 def get_cittadino(user_id):
-conn = sqlite3.connect("polizia.db")
-cursor = conn.cursor()
-cursor.execute("SELECT * FROM cittadini WHERE user_id = ?", (user_id,))
-row = cursor.fetchone()
-if not row:
-cursor.execute("INSERT INTO cittadini (user_id) VALUES (?)", (user_id,))
-conn.commit()
-cursor.execute("SELECT * FROM cittadini WHERE user_id = ?", (user_id,))
-row = cursor.fetchone()
-conn.close()
-return row
+    conn = sqlite3.connect("polizia.db")
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM cittadini WHERE user_id = ?", (user_id,))
+    row = cursor.fetchone()
+    if not row:
+        cursor.execute("INSERT INTO cittadini (user_id) VALUES (?)", (user_id,))
+        conn.commit()
+        cursor.execute("SELECT * FROM cittadini WHERE user_id = ?", (user_id,))
+        row = cursor.fetchone()
+    conn.close()
+    return row
 
 def update_cittadino(user_id, column, value):
-conn = sqlite3.connect("polizia.db")
-cursor = conn.cursor()
-cursor.execute(f"UPDATE cittadini SET {column} = ? WHERE user_id = ?", (value, user_id))
-conn.commit()
-conn.close()
+    conn = sqlite3.connect("polizia.db")
+    cursor = conn.cursor()
+    cursor.execute(f"UPDATE cittadini SET {column} = ? WHERE user_id = ?", (value, user_id))
+    conn.commit()
+    conn.close()
 
 def add_precedente(user_id, nota):
 row = get_cittadino(user_id)
